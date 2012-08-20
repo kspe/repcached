@@ -1,0 +1,63 @@
+2011-02-14  Maxim Dounin
+
+  * release of repcached-2.3.1 for memcached-1.4.5
+  * fixed another cpu hog on network problems
+
+2010-11-24  Maxim Dounin
+
+  * release of repcached-2.3 for memcached-1.4.5
+  * fixed cpu hog on transient network problems
+
+2009-05-26  YASUI Masanobu
+  * release of repcached-2.2 for memcached-1.2.8
+
+2009-01-05  YASUI Masanobu
+  * fixed segmentation fault on marugoto copying for 64bit platform
+
+2008-08-26  HIROSE Masaaki
+
+  * release of repcached-2.1 for memcached-1.2.6
+
+2008-04-11  YASUI Masanobu
+  * release of repcached-2.0 for memcached-1.2.5
+  * multi master replication support
+  * replication able to cas id
+  * fixed replication connect error
+
+2008-03-10  YASUI Masanobu
+  * release of repcached-1.2 for memcached-1.2.4
+  * bug fix.
+  * flags was not possible to replication.
+    always stored to zero in backup.
+      master> set key flags expire len
+      backup> set key 0     expire len
+    This bug was corrected.
+  * fixed memory leaks when replicating the flush_all command.
+
+2008-02-15  HIROSE Masaaki
+
+  * release of repcached-1.1 for memcached-1.2.4
+
+2008-02-05  YASUI Masanobu
+
+  * support memcached-1.2.4's new commands (append, prepend, cas)
+    known problem: repcached-1.1 cannot replicate cas unique id. so
+    it is possible that cas operation is fail if master/backup
+    fail-over occur between gets and cas.
+
+2008-02-04  HIROSE Masaaki
+
+  * include test suite for replication.
+    prove -l t.rep
+
+2007-11-13  HIROSE Masaaki
+
+  * release of repcached-1.0 for memcached-1.2.2
+
+  * first release.
+
+
+
+Local Variables:
+mode: change-log
+End:

@@ -1,0 +1,4 @@
+./configure --enable-replication
+make
+make test
+prove t.rep
